@@ -67,7 +67,7 @@ def send_image(subject, message_real, token, base64_image):
     except requests.exceptions.RequestException as err:
         print("Erro na solicitação:", err)
 
-zbx_server = 'http://{ip_zabbix_web}'.format(ip_zabbix_web)
+zbx_server = zbx_server = f'http://{ip_zabbix_web}'.format(ip_zabbix_web)
 zbx_user = zabbixuser
 zbx_pass = zabbixpass
 width = 900
