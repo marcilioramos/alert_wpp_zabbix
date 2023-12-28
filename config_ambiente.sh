@@ -55,20 +55,22 @@ sudo ln -s /etc/nginx/sites-available/wpp /etc/nginx/sites-enabled
 sudo nginx -t
 sudo service nginx restart
 
-# INSTALANDO SNAP E CERTBOT (OPCIONAL)
-sudo apt install snapd
-sudo snap install notes
-
-read -p "Deseja instalar o Certbot para configuração do SSL? (s/n): " install_certbot
-
-if [ "$install_certbot" = "s" ]; then
-    sudo snap install --classic certbot
-    show_progress
-    # PROSSEGUINDO COM O CERTBOT (SUBSTITUA "seudominioaqui.com.br" PELO SEU DOMÍNIO)
-    sudo certbot --nginx -d api.seudominioaqui.com.br
-fi
 
 # ABRINDO PORTAS NO FIREWALL
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 sudo service ufw restart
+
+# INSTALANDO SNAP E CERTBOT (OPCIONAL)
+#sudo apt install snapd
+#sudo snap install notes
+
+
+#read -p "Deseja instalar o Certbot para configuração do SSL? (s/n): " install_certbot
+
+#if [ "$install_certbot" = "s" ]; then
+#    sudo snap install --classic certbot
+#    show_progress
+#    # PROSSEGUINDO COM O CERTBOT (SUBSTITUA "seudominioaqui.com.br" PELO SEU DOMÍNIO)
+#    sudo certbot --nginx -d api.seudominioaqui.com.br
+#fi
