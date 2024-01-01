@@ -9,11 +9,11 @@ import sys
 #########################################
 # Variaveis que precisam ser alteradas
 ########################################
-token = 'nova:$2b$10$N9xrdqCW4S1jpNyB44L1nuXj79EAvo83MS6uxhBg8JOvWNLV8QlaS'
-ip_wpp = '10.10.100.31'
-ip_zabbix_web = '10.10.100.11:90'
-zbx_user = 'marcilio'
-zbx_pass = 'Msrmsrmsr!1'
+token = 'token'
+ip_wpp = 'ip'
+ip_zabbix_web = 'ip zabbix'
+zbx_user = 'usuario'
+zbx_pass = 'senha'
 ################################
 # Variaveis coletadas no Zabbix
 ################################
