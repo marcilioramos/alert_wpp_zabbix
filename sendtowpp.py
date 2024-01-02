@@ -1,7 +1,7 @@
 #!/bin/python3
 ################################################################
 # Autor: Marcilio Ramos
-# Data: 02.01.2023
+# Data: 02.01.2024
 # Finalidade: Envio de alertas Zabbix usando API wpp connect
 #################################################################
 
