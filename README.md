@@ -29,4 +29,40 @@
 3. Para configurar o sistema, execute o script disponível em [config_ambiente.sh](https://github.com/marcilioramos/alert_wpp_zabbix/blob/main/config_ambiente.sh).
 4. Após a configuração, o sistema estará acessível via URL: [http://localhost/api-docs/](http://localhost/api-docs/).
 5. Iremos importar o arquivo [postman_collection Referente a esse projeto](https://github.com/marcilioramos/alert_wpp_zabbix/blob/main/WPPConnect%20API%20REST.postman_collection.json)
-6. E depois seguir as instruções no video de meu canal.
+6. Alimente as variáveis no postman.
+7. Scaneie o QRCode com um conta valida no whatsapp
+8. Copie o token e cole no codigo que deve estar no diretorio de scripts de alertas do zabbix.
+9. Preencha as variáveis do script:
+  - token = 'token'
+  - ip_wpp = 'ip'
+  - ip_zabbix_web = 'ip zabbix'
+  - zbx_user = 'usuario' (verificar permissões)
+  - zbx_pass = 'senha'
+11. Crie a midia no Zabbix com o nome do script
+  - Use esse modelo de mensagem:
+
+![image](https://github.com/marcilioramos/alert_wpp_zabbix/assets/48597831/92194b00-4586-4e5f-961a-391285b152b3)
+
+
+- Note a primeira linha "ON#{TRIGGER.ID}#True#{ITEM.ID}#FF0000#900#200#{HOST.HOST}", ela é que irá alimentar as variáveis do script e todas são separadas por um #, segue o significado delas:
+
+ON/OFF = Com ou sem grafico
+
+{TRIGGER.ID}
+
+True/False = True = envio para grupo False = envio para usuário
+
+{ITEM.ID} = Item ID
+
+FF0000 = Cor do gráfico
+
+900 = Largura do Grafico
+
+200 = Altura do Gráfico
+
+{HOST.HOST} = HostName
+
+12. Associe a midia a um usuário e depois a um alerta
+13. O numero precisa está no formato 55"DDD""numero-do-usuario", se for grupo precisará buscar via API, com o Método "GET All Groups".
+14. Teste o envio :-) 
+15. E depois seguir as instruções no video de meu canal.
