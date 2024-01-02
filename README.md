@@ -65,4 +65,4 @@ FF0000 = Cor do gráfico
 12. Associe a midia a um usuário e depois a um alerta
 13. O numero precisa está no formato 55"DDD""numero-do-usuario", se for grupo precisará buscar via API, com o Método "GET All Groups".
 14. Teste o envio :-) 
-15. E depois seguir as instruções no video de meu canal.
+15. Qualquer dúvida siga o video do meu canal do youtube: 
