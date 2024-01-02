@@ -1,7 +1,7 @@
 #!/bin/bash
 #######################
 # Autor: Marcilio Ramos
-# Data: 28.12.2024
+# Data: 28.12.2023
 # Versão: 1.0
 # Finalidade: Configuração do ambiente para prover a api do wpp
 ########################
