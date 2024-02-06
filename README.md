@@ -1,4 +1,5 @@
 ## Doações 
+##### Se esse projeto te ajudou, leva em consideração ajudar o desenvolvedor :-)
 ###### (Pix Mercado Pago ou PayPal)
 
 
