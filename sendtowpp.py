@@ -38,7 +38,7 @@ linhas2 = message.splitlines()  # Divide o texto em linhas
 message_real = '\n'.join(linhas2[1:])  # Pega todas as linhas após a primeira e as junta em uma string
 
 trigger_name = array[1]
-isGroup = array[2]
+isgroup = array[2]
 item_ids = array[3].split(',')
 host_name = array [7]
 
@@ -46,11 +46,11 @@ host_name = array [7]
 # Envio de mensagem com imagem
 ##########################################
 
-def send_image(phone, isGroup, subject, message_real, token, ip_wpp, base64_image):
+def send_image(phone, isgroup, subject, message_real, token, ip_wpp, base64_image):
     wppconnect_url = 'http://{}/api/{}/send-image'.format(ip_wpp, token)
     data = {
         "phone": phone,
-        "isGroup": isGroup,
+        "isGroup": isgroup,
         "caption": subject + '\n' + message_real,
         "base64": 'data:image/png;base64,' + base64_image
     }
@@ -113,7 +113,7 @@ if array[0] == 'ON':
 
             with open("zap.png", "rb") as img_file:
                 base64_image = base64.b64encode(img_file.read()).decode("utf-8")
-                send_image(phone, isGroup, subject, message_real, token, ip_wpp, base64_image) 
+                send_image(phone, isgroup, subject, message_real, token, ip_wpp, base64_image) 
         else:
             pass
 
@@ -129,11 +129,14 @@ if array[0] == 'ON':
 ##############################
 
 if array[0] == 'OFF':
+    with open('/tmp/output.txt', 'a') as file:
+        file.write('sem grafico enviando para: {}'.format(phone))
+        file.write(isgroup)
     wppconnect_url = 'http://{}/api/{}/send-message'.format(ip_wpp,token)
 
     data = {
         "phone": phone,
-        "isGroup": isGroup,
+        "isGroup": isgroup,
         "message": subject + '\n' + message_real
     }
 
@@ -148,4 +151,6 @@ if array[0] == 'OFF':
         print(response.text)
     except requests.exceptions.RequestException as err:
         print("Erro na solicitação:", err)
+        with open('/tmp/output.txt', 'a') as file:
+            file.write("Erro na solicitação:", err)
 
