@@ -19,7 +19,7 @@ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
 # Instalando e iniciando o WPP Connect
 cd ~
-git clone https://github.com/wppconnect-team/wppconnect-server.git
+git clone https://github.com/marcilioramos/msr-zap.git
 cd wppconnect-server
 npm install
 npm run build
