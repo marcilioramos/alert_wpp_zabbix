@@ -18,13 +18,20 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb ; apt-get install -f -y
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
 # Instalando e iniciando o WPP Connect
+
+cd wppconnect-server/
+  284  git clone https://github.com/wppconnect-team/wppconnect-server.git
+  285  cd wppconnect-server/
+  286  ls
+  287  npm install ; npm run build ; npm install -g pm2
+  288  pm2 start npm --name wpp -- start ; pm2 logs
+  289  pm2 status 
+
 cd ~
-git clone https://github.com/marcilioramos/msr-zap.git
+git clone https://github.com/wppconnect-team/wppconnect-server.git
 cd wppconnect-server
-npm install
-npm run build
-sudo npm install -g pm2
-pm2 start npm --name wpp -- start
+npm install ; npm run build ; npm install -g pm2
+pm2 start npm --name wpp -- start ; pm2 logs
 
 # Configurando o NGINX
 sudo rm /etc/nginx/sites-enabled/default
@@ -54,3 +61,4 @@ sudo service nginx restart
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 sudo service ufw restart
+pm2 status 
